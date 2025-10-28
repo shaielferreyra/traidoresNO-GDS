@@ -9,6 +9,7 @@ import Miembros from './components/Miembros';
 import Galeria from './components/Galeria';
 import Historia from './components/Historia';
 import Tienda from './components/Tienda';
+import Countdown from './components/Countdown';
 import Newsletter from './components/Newsletter';
 import Contacto from './components/Contacto';
 import Footer from './components/Footer';
@@ -21,6 +22,7 @@ function App() {
       <Carousel />
       <Conciertos />
       <Noticias />
+      <Countdown />
       <Discografia />
       <Videos />
       <Miembros />
