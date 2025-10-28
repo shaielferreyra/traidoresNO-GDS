@@ -1,0 +1,148 @@
+.historia {
+  padding: 6rem 2rem;
+  background: var(--black);
+}
+
+.historia-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.historia-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.historia-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--light-gray);
+  text-align: justify;
+}
+
+.testimonials h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: var(--primary-red);
+  text-align: center;
+}
+
+.testimonial-card {
+  background: var(--medium-gray);
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--primary-red);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateX(10px);
+  box-shadow: 0 5px 20px rgba(220, 0, 0, 0.3);
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.testimonial-author {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-red);
+  text-align: right;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .historia {
+    padding: 5rem 1.5rem;
+  }
+  
+  .historia-content {
+    gap: 3rem;
+  }
+  
+  .historia-text p {
+    font-size: 1rem;
+  }
+  
+  .testimonials h3 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 968px) {
+  .historia {
+    padding: 4rem 1rem;
+  }
+
+  .historia-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .historia-text p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .testimonials h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateX(5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .historia {
+    padding: 3rem 1rem;
+  }
+  
+  .historia-content {
+    gap: 2rem;
+  }
+  
+  .historia-text {
+    gap: 1rem;
+  }
+  
+  .historia-text p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  
+  .testimonials h3 {
+    font-size: 1.3rem;
+  }
+  
+  .testimonial-card {
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
+  
+  .testimonial-author {
+    font-size: 0.85rem;
+  }
+}
