@@ -1,0 +1,195 @@
+.conciertos {
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, var(--black) 0%, var(--dark-gray) 100%);
+}
+
+.shows-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.show-card {
+  background: var(--medium-gray);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.show-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(220, 0, 0, 0.1), 
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.show-card:hover::before {
+  left: 100%;
+}
+
+.show-card:hover {
+  border-color: var(--primary-red);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(220, 0, 0, 0.3);
+}
+
+.show-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--primary-red);
+  padding: 1rem;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.show-date .date {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.show-date .month {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 0.3rem;
+}
+
+.show-date .day {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 0.3rem;
+  opacity: 0.9;
+}
+
+.show-info {
+  flex: 1;
+}
+
+.show-info h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.show-info p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--light-gray);
+  margin-bottom: 0.5rem;
+}
+
+.btn-tickets {
+  background: transparent;
+  border: 2px solid var(--primary-red);
+  color: var(--white);
+  padding: 1rem 2rem;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-tickets:hover {
+  background: var(--primary-red);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(220, 0, 0, 0.4);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .conciertos {
+    padding: 5rem 1.5rem;
+  }
+  
+  .shows-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .conciertos {
+    padding: 4rem 1rem;
+  }
+
+  .shows-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .show-card {
+    padding: 1.5rem;
+  }
+  
+  .show-date .date {
+    font-size: 2rem;
+  }
+  
+  .show-date .month {
+    font-size: 0.9rem;
+  }
+  
+  .show-info h3 {
+    font-size: 1.3rem;
+  }
+  
+  .show-info p {
+    font-size: 0.95rem;
+  }
+  
+  .btn-tickets {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .conciertos {
+    padding: 3rem 1rem;
+  }
+  
+  .show-card {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+  
+  .show-date {
+    padding: 0.8rem;
+  }
+  
+  .show-date .date {
+    font-size: 1.8rem;
+  }
+  
+  .show-info h3 {
+    font-size: 1.2rem;
+  }
+  
+  .btn-tickets {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+}
