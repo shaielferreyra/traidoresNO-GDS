@@ -1,0 +1,279 @@
+.discografia {
+  padding: 6rem 2rem;
+  background: var(--black);
+}
+
+.albums-grid {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.album-card {
+  position: relative;
+  cursor: pointer;
+}
+
+.album-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.album-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.album-card:hover .album-cover img {
+  transform: scale(1.1);
+}
+
+.album-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, 
+    rgba(0, 0, 0, 0.95) 0%, 
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.album-overlay.visible {
+  opacity: 1;
+}
+
+.album-overlay h3 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.album-year {
+  font-size: 1rem;
+  color: var(--primary-red);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.album-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: var(--light-gray);
+}
+
+.btn-listen {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary-red);
+  color: var(--white);
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 700;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.btn-listen:hover {
+  background: var(--dark-red);
+  transform: translateX(5px);
+}
+
+/* Sección de Letras */
+.lyrics-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: var(--medium-gray);
+  border-radius: 10px;
+  border: 2px solid var(--primary-red);
+}
+
+.lyrics-section h3 {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--primary-red);
+}
+
+.songs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.song-item {
+  background: var(--dark-gray);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.song-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.song-header:hover {
+  background: var(--primary-red);
+  padding-left: 2rem;
+}
+
+.song-lyrics {
+  padding: 1.5rem;
+  background: var(--black);
+  border-top: 1px solid var(--primary-red);
+  animation: slideDown 0.3s ease;
+}
+
+.song-lyrics p {
+  white-space: pre-line;
+  line-height: 1.8;
+  color: var(--light-gray);
+  font-style: italic;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .discografia {
+    padding: 5rem 1.5rem;
+  }
+  
+  .albums-grid {
+    gap: 2rem;
+  }
+  
+  .lyrics-section {
+    padding: 2.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .discografia {
+    padding: 4rem 1rem;
+  }
+
+  .albums-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .album-overlay {
+    padding: 1.5rem;
+  }
+  
+  .album-overlay h3 {
+    font-size: 1.5rem;
+  }
+  
+  .album-description {
+    font-size: 0.9rem;
+  }
+  
+  .btn-listen {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .lyrics-section {
+    padding: 2rem 1rem;
+  }
+
+  .lyrics-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .song-header {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  .song-header:hover {
+    padding-left: 1.5rem;
+  }
+  
+  .song-lyrics {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .discografia {
+    padding: 3rem 1rem;
+  }
+  
+  .album-overlay {
+    padding: 1rem;
+  }
+  
+  .album-overlay h3 {
+    font-size: 1.3rem;
+  }
+  
+  .album-year {
+    font-size: 0.9rem;
+  }
+  
+  .album-description {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  
+  .lyrics-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .lyrics-section h3 {
+    font-size: 1.3rem;
+  }
+  
+  .song-header {
+    gap: 0.7rem;
+    font-size: 0.95rem;
+  }
+  
+  .song-lyrics p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
