@@ -23,7 +23,7 @@ const Miembros = () => {
       influences: ['Nirvana', 'Divididos', 'Pearl Jam']
     },
     {
-      name: 'Alvaro "Piojo" Castillo',
+      name: 'Alvaro "Piojo" Acosta',
       role: 'Guitarra Principal',
       icon: <Guitar size={40} />,
       photo: piojoPhoto,
