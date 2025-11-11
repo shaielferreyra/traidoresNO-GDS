@@ -13,6 +13,7 @@ import Countdown from './components/Countdown';
 import Newsletter from './components/Newsletter';
 import Contacto from './components/Contacto';
 import Footer from './components/Footer';
+import Memoriam from './components/Memoriam';
 import './App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     <div className="app">
       <Navbar />
       <Carousel />
+      <Memoriam />
       <Conciertos />
       <Noticias />
       <Countdown />

@@ -1,0 +1,566 @@
+/* ==========================================
+   SECCIÓN IN MEMORIAM - ULISES ESPINOZA
+   ========================================== */
+
+.memoriam {
+  padding: 8rem 2rem;
+  background: linear-gradient(
+    180deg,
+    #000000 0%,
+    #0a0a0a 50%,
+    #000000 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de luz suave de fondo */
+.memoriam::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(
+    circle,
+    rgba(220, 0, 0, 0.03) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.memoriam-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.memoriam-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.memoriam-icon {
+  color: var(--primary-red);
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.memoriam-title {
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--white);
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.memoriam-divider {
+  width: 150px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary-red),
+    transparent
+  );
+  margin: 0 auto;
+}
+
+/* ==========================================
+   FOTO
+   ========================================== */
+
+.memoriam-photo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.photo-frame {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  padding: 8px;
+  background: linear-gradient(
+    135deg,
+    rgba(220, 0, 0, 0.3),
+    rgba(255, 255, 255, 0.1)
+  );
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6),
+              0 0 60px rgba(220, 0, 0, 0.2);
+}
+
+.memoriam-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(0, 0, 0, 0.8);
+  filter: grayscale(100%) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+.photo-frame:hover .memoriam-photo {
+  filter: grayscale(80%) contrast(1.1);
+}
+
+/* Velo sutil sobre la foto */
+.photo-veil {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    transparent 30%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ==========================================
+   INFORMACIÓN
+   ========================================== */
+
+.memoriam-info {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.memoriam-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.memoriam-date {
+  font-size: 1.2rem;
+  color: var(--light-gray);
+  font-style: italic;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.heart-icon {
+  color: var(--primary-red);
+  opacity: 0.8;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(1.1);
+  }
+  20%, 40% {
+    transform: scale(1);
+  }
+}
+
+/* ==========================================
+   TRIBUTO
+   ========================================== */
+
+.memoriam-tribute {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 3rem;
+  border-radius: 15px;
+  border: 1px solid rgba(220, 0, 0, 0.1);
+  margin-bottom: 3rem;
+  backdrop-filter: blur(10px);
+}
+
+.tribute-text {
+  font-size: 1.1rem;
+  line-height: 2;
+  color: var(--light-gray);
+  margin-bottom: 1.8rem;
+  text-align: justify;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.tribute-text strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.tribute-text.final-words {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* ==========================================
+   CITA
+   ========================================== */
+
+.tribute-quote {
+  background: rgba(220, 0, 0, 0.05);
+  border-left: 4px solid var(--primary-red);
+  padding: 2rem 2.5rem;
+  margin: 3rem 0;
+  position: relative;
+}
+
+.tribute-quote::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  font-size: 5rem;
+  color: var(--primary-red);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+}
+
+.tribute-quote p {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--white);
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.tribute-quote cite {
+  font-size: 1rem;
+  color: var(--primary-red);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ==========================================
+   FIRMA
+   ========================================== */
+
+.tribute-signature {
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--white);
+  font-style: italic;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(220, 0, 0, 0.2);
+  line-height: 1.8;
+  font-family: 'Brush Script MT', cursive;
+}
+
+/* ==========================================
+   VELAS
+   ========================================== */
+
+.memoriam-candles {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.candle {
+  width: 8px;
+  height: 60px;
+  background: linear-gradient(
+    180deg,
+    #ffcc00 0%,
+    #ff9900 50%,
+    #8B4513 100%
+  );
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
+  animation: flicker 3s ease-in-out infinite;
+}
+
+.candle::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 20px;
+  background: radial-gradient(
+    ellipse at center,
+    #ffcc00 0%,
+    #ff6600 40%,
+    transparent 70%
+  );
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: flame 2s ease-in-out infinite;
+}
+
+.candle:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.candle:nth-child(2)::before {
+  animation-delay: 0.3s;
+}
+
+.candle:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.candle:nth-child(3)::before {
+  animation-delay: 0.7s;
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
+  }
+  50% {
+    opacity: 0.9;
+    box-shadow: 0 0 25px rgba(255, 204, 0, 0.6);
+  }
+}
+
+@keyframes flame {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(-50%) scale(1.1, 0.9);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateX(-50%) scale(0.9, 1.1);
+    opacity: 0.95;
+  }
+  75% {
+    transform: translateX(-50%) scale(1.05, 0.95);
+    opacity: 0.9;
+  }
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.memoriam-footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-text {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .memoriam {
+    padding: 6rem 1.5rem;
+  }
+
+  .memoriam-title {
+    font-size: 2.5rem;
+    letter-spacing: 6px;
+  }
+
+  .photo-frame {
+    width: 250px;
+    height: 250px;
+  }
+
+  .memoriam-name {
+    font-size: 2.2rem;
+  }
+
+  .tribute-quote p {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .memoriam {
+    padding: 5rem 1rem;
+  }
+
+  .memoriam-title {
+    font-size: 2rem;
+    letter-spacing: 4px;
+  }
+
+  .memoriam-divider {
+    width: 100px;
+  }
+
+  .photo-frame {
+    width: 220px;
+    height: 220px;
+  }
+
+  .memoriam-name {
+    font-size: 2rem;
+  }
+
+  .memoriam-date {
+    font-size: 1.1rem;
+  }
+
+  .memoriam-tribute {
+    padding: 2rem 1.5rem;
+  }
+
+  .tribute-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: left;
+  }
+
+  .tribute-quote {
+    padding: 1.5rem 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .tribute-quote p {
+    font-size: 1.2rem;
+  }
+
+  .tribute-signature {
+    font-size: 1.1rem;
+  }
+
+  .memoriam-candles {
+    gap: 1.5rem;
+  }
+
+  .candle {
+    height: 50px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .memoriam {
+    padding: 4rem 1rem;
+  }
+
+  .memoriam-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .memoriam-title {
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+  }
+
+  .photo-frame {
+    width: 180px;
+    height: 180px;
+  }
+
+  .memoriam-name {
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+  }
+
+  .memoriam-date {
+    font-size: 1rem;
+  }
+
+  .heart-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .memoriam-tribute {
+    padding: 1.5rem 1rem;
+  }
+
+  .tribute-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .tribute-quote {
+    padding: 1.2rem 1rem;
+  }
+
+  .tribute-quote::before {
+    font-size: 3.5rem;
+    top: -5px;
+    left: 10px;
+  }
+
+  .tribute-quote p {
+    font-size: 1.1rem;
+  }
+
+  .tribute-quote cite {
+    font-size: 0.9rem;
+  }
+
+  .tribute-signature {
+    font-size: 1rem;
+  }
+
+  .candle {
+    width: 6px;
+    height: 40px;
+  }
+
+  .memoriam-candles {
+    gap: 1rem;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.memoriam-container {
+  animation: fadeInUp 1s ease-out;
+}
